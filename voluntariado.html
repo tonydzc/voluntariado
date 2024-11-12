@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz día del voluntariado</title>
+    <meta property="og:title" content="Feliz día del voluntariado" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tusitio.com/feliz-dia-del-voluntariado" />
+    <meta property="og:image" content="fdvoluntariado.png" />
+    <meta property="og:description" content="Hoy 5 de diciembre es un día especial." />
+      
+  <style>
+    body,div, h1,h2,form,fieldset,input,textarea,footer,p{
+      margin: 0;
+      padding: 0;
+      border: none;
+      outline: none;
+    }
+    body {
+      background: #fff;
+      color: black;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    p {
+      font-size: 25px;
+    }
+    #wrap {
+      width: 500px;
+      height: 1000px;
+      margin: 20px auto 0;
+    }
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 35px;
+      font-family: 'Courier New', Courier, monospace;
+      color: rgb(49,31,31);
+    }
+    #form-wrap {
+      overflow: hidden;
+      height: 430px;
+      position: relative;
+      top: 0;
+      transition: all 1s ease-in-out .2s;
+    }
+    #form-wrap::before {
+      content: '';
+      position: absolute;
+      bottom: 110px;
+      left: 0;
+      background: url(sobre-superior.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 300px;
+      max-width: 100%;
+    }
+    #form-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: url(sobre-inferior.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 245px;
+    }
+
+    #form-wrap.hide::after,
+    #form-wrap.hide::before {
+      display: none;
+    }
+    
+    /* Estilos para el efecto de expansión cuando se hace clic */
+    #form-wrap.expanded {
+      height: 1050px;
+      top: -200px;
+    }
+
+    form {
+      background: white;
+      position: relative;
+      top: 200px;
+      overflow: hidden;
+      height: 400px;
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid white;
+      border-right: 3px;
+      transition: all 1s ease-in-out .3s;
+    }
+
+    #form-wrap.expanded form {
+      height: 800px;
+    }
+
+    label {
+      margin: 11px 20px 0 0;
+      font-size: 15px;
+      color: gray;
+      text-transform: uppercase;
+    }
+    input[type=text], textarea {
+      font: 12px normal uppercase, monospace;
+      color: dimgray;
+      background: none;
+      width: 380px;
+      height: 37px;
+      padding: 0 10px;
+      margin: 0 0 10px 0;
+      border: 1px solid dodgerblue;
+      border-radius: 5px;
+    }
+    textarea {
+      height: 80px;
+      padding-top: 14px;
+    }
+    textarea:focus,
+    input[type=text]:focus {
+      background: white;
+    }
+    #form-wrap input[type=submit] {
+      position: relative;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 24px;
+      color: gray;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      background: none;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: opacity .7s ease-in-out 0;
+    }
+
+    #form-wrap.expanded input[type=submit] {
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out 1.2s;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="form-wrap">
+      <form>
+        <p>Los voluntarios no reciben paga, no porque sean inservibles, sino porque son invaluables.</p> 
+        <p>Nada libera nuestra grandeza como el deseo de ayudar y de servir. La vida es un muro, debes escalarlo empujando a otros para que suban y serás empujado también. Ayuda el día de hoy.</p> 
+        <p>Los voluntarios no reciben paga, no porque sean inservibles, sino porque son invaluables.</p>   
+        <p>5 de diciembre día del Voluntario,</p>
+        <br>
+        <p>Luis norteño</p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Agrega un evento de clic en #form-wrap para alternar la clase .expanded
+    document.getElementById("form-wrap").addEventListener("click", function() {
+      this.classList.toggle("expanded");
+    });
+  </script>
+</body>
+</html>
