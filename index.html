@@ -147,8 +147,8 @@
   </style>
 </head>
 <body>
-  <!-- Audio que se reproduce automáticamente -->
-  <audio autoplay loop>
+  <!-- Audio que se reproduce automáticamente después de la interacción -->
+  <audio id="background-audio" loop>
     <source src="conunasonrisa.mp4" type="audio/mp4">
     Tu navegador no soporta la reproducción de audio.
   </audio>
@@ -167,11 +167,23 @@
   </div>
 
   <script>
-    // Agrega un evento de clic en #form-wrap para alternar la clase .expanded
+    // Obtener referencia al audio
+    const audio = document.getElementById('background-audio');
+    
+    // Agrega un evento de clic o toque en #form-wrap
     document.getElementById("form-wrap").addEventListener("click", function() {
       this.classList.toggle("expanded");
+      
+      // Iniciar el audio si no está reproduciéndose
+      if (audio.paused) {
+        audio.play().catch((error) => {
+          console.error("Error al reproducir el audio:", error);
+        });
+      }
     });
   </script>
+</body>
+
 </body>
 </body>
 </html>
